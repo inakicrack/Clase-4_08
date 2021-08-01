@@ -6,4 +6,6 @@ public class Elemento {
 	public float operar(float otroelemento) {
 		return valor;
 	}
+	
+	
 }

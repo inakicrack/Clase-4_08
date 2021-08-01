@@ -1,9 +1,12 @@
 
-public class ElementoDivisible {
+public class ElementoDivisible extends Elemento{
 
+	//float valor = 0;
 	float eD = 0;
-
-	public void division() {
+	ElementoDivisible d = new ElementoDivisible();
+	
+	public ElementoDivisible division() {
+		return ;
 		
 	}
 }

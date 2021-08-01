@@ -1,9 +1,12 @@
 
-public class ElementoSumable {
+public class ElementoSumable extends Elemento{
 
+	//float valor = 0;
 	float eS = 0;
+	ElementoSumable a = new ElementoSumable();
 	
-	public void suma() {
+	public ElementoSumable suma() {
+		return null;
 		
 	}
 }
