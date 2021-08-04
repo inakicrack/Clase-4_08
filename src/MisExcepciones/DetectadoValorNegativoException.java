@@ -1,6 +1,6 @@
 package MisExcepciones;
 
-public class DetectadoValorNegativoException extends Exception{
+public class DetectadoValorNegativoException extends RuntimeException{
 	
 	/**
 	 * 

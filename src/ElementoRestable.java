@@ -9,7 +9,7 @@ public class ElementoRestable extends Elemento{
 		//this.checkValor();
 	}
 	
-	public void operar(Elemento nuevoER) {
+	public void operar(Elemento nuevoER) { //throws DetectadoValorNegativoException {
 		this.setValor( this.valor - nuevoER.getValor() );
 	}
 	
@@ -17,8 +17,10 @@ public class ElementoRestable extends Elemento{
 		return Float.toString(valor) + " " + this.MARCA;
 	}
 	
-	public void setValor(float nuevoValor) {
+	public void setValor(float nuevoValor) { //throws DetectadoValorNegativoException {
 		this.valor = nuevoValor;
+		this.checkValor();
+		/*
 		try {
 			this.checkValor();
 		} catch (DetectadoValorNegativoException e) {
@@ -27,11 +29,12 @@ public class ElementoRestable extends Elemento{
 			//this.setValor(this.getValor() * -1);
 			//throw new DetectadoValorNegativoException("Error anidado");
 		}
+		*/
 	} 
 	
-	private void checkValor() throws DetectadoValorNegativoException {
+	private void checkValor() { //throws  DetectadoValorNegativoException{
 		if (this.valor < 0) {
-			throw new DetectadoValorNegativoException("Has puesto un valor negativo en la operación");
+			throw new DetectadoValorNegativoException("\nHAS PEUSTO UN VALOR NEGATIVO EN LA OPERACIÓN !!!\n");
 		}
 	}
 }

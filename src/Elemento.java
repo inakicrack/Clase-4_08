@@ -1,4 +1,4 @@
-import MisExcepciones.DetectadoValorNegativoException;
+//import MisExcepciones.DetectadoValorNegativoException;
 
 abstract public class Elemento {
 
@@ -46,7 +46,7 @@ abstract public class Elemento {
 		return this.valor;
 	}
 	
-	public void setValor(float nuevoValor){// throws DetectadoValorNegativoException {
+	public void setValor(float nuevoValor) { //throws DetectadoValorNegativoException{
 		this.valor = nuevoValor;
 	} 
 }
