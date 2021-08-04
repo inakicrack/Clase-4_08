@@ -1,22 +1,18 @@
 
 public class ElementoMultiplicador extends Elemento{
-
-	//float valor = 0;
-	private float eM = 0;
 	
-	public ElementoMultiplicador(float eM) {
-		this.eM = eM;
+	final String MARCA = "(M)";
+	
+	public ElementoMultiplicador(float valor) {
+		super(valor);
 	}
 
-	public void multiplicacion(ElementoMultiplicador nuevoEM) {
-		this.set_eM( this.eM * nuevoEM.get_eM() );
+
+	public void operar(Elemento nuevoEM) {
+		this.setValor( this.valor * nuevoEM.getValor() );
 	}
 	
-	public float get_eM() {
-		return this.eM;
-	}
-	
-	public void set_eM(float nuevoValorM) {
-		this.eM = nuevoValorM;
+	public String toString() {
+		return Float.toString(valor) + " " + this.MARCA;
 	}
 }

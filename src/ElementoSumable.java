@@ -1,22 +1,17 @@
 
 public class ElementoSumable extends Elemento{
 
-	//float valor = 0;
-	private float eS = 0;
+	final String MARCA = "(S)";
 	
-	public ElementoSumable(float eS) {
-		this.eS = eS;
+	public ElementoSumable(float valor) {
+		super(valor);
 	}
 	
-	public void suma(ElementoSumable nuevoES) {
-		this.set_eS( this.eS + nuevoES.get_eS() );
+	public void operar(Elemento nuevoES) {
+		this.setValor( this.valor + nuevoES.getValor() );
 	}
 	
-	public float get_eS() {
-		return this.eS;
-	}
-	
-	public void set_eS(float nuevoValorS) {
-		this.eS = nuevoValorS;
+	public String toString() {
+		return Float.toString(valor) + " " + this.MARCA;
 	}
 }

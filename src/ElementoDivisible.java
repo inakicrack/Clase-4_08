@@ -1,23 +1,17 @@
 
 public class ElementoDivisible extends Elemento{
-
-	//float valor = 0;
-	private float eD = 0;
 	
-	public ElementoDivisible(float eD) {
-		this.eD = eD;
+    final String MARCA = "(D)";
+    
+	public ElementoDivisible(float valor) {
+		super(valor);
 	}
 	
-	public void division(ElementoDivisible nuevoED) {
-		this.set_eD( this.eD / nuevoED.get_eD() );	
+	public void operar(Elemento nuevoED) {
+		this.setValor( this.valor / nuevoED.getValor() );	
 	}
 	
-	public float get_eD() {
-		return this.eD;
+	public String toString() {
+		return Float.toString(valor) + " " + this.MARCA;
 	}
-	
-	public void set_eD(float nuevoValorD) {
-		this.eD = nuevoValorD;
-	}
-	
 }

@@ -1,22 +1,37 @@
+import MisExcepciones.DetectadoValorNegativoException;
 
 public class ElementoRestable extends Elemento{
-
-	//float valor = 0;
-	private float eR = 0;
 	
-	public ElementoRestable(float eR) {
-		this.eR = eR;
+	final String MARCA = "(R)";
+	
+	public ElementoRestable(float valor) {
+		super(valor);
+		//this.checkValor();
 	}
 	
-	public void resta(ElementoRestable nuevoER) {
-		this.set_eR( this.eR - nuevoER.get_eR() );
+	public void operar(Elemento nuevoER) {
+		this.setValor( this.valor - nuevoER.getValor() );
 	}
 	
-	public float get_eR() {
-		return this.eR;
+	public String toString() {
+		return Float.toString(valor) + " " + this.MARCA;
 	}
 	
-	public void set_eR(float nuevoValorR) {
-		this.eR = nuevoValorR;
+	public void setValor(float nuevoValor) {
+		this.valor = nuevoValor;
+		try {
+			this.checkValor();
+		} catch (DetectadoValorNegativoException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+			//this.setValor(this.getValor() * -1);
+			//throw new DetectadoValorNegativoException("Error anidado");
+		}
+	} 
+	
+	private void checkValor() throws DetectadoValorNegativoException {
+		if (this.valor < 0) {
+			throw new DetectadoValorNegativoException("Has puesto un valor negativo en la operación");
+		}
 	}
 }
